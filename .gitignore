@@ -1,0 +1,5 @@
+*.dvi
+*.cls
+*.sty
+*.backup
+*.bst
