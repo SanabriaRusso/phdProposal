@@ -10,7 +10,14 @@
 \maketitle
 
 \begin{abstract}
-The current standard for medium access control in Wireless Local Area Networks (WLANs) called Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA), is by its nature prone to collisions. These happen as a consequence of randomizing the backoff counter each contender must select in order to coordinate its transmissions. Carrier Sense Multiple Access with Enhanced Collision Avoidance (CSMA/ECA) introduces minor adjustments to CSMA/CA  that eliminate the possibility of collisions after a short convergence period. Its principle is to select a deterministic backoff after successful transmissions instead of a random one (as in CSMA/CA), allowing contenders to \emph{own} a time slot in the schedule. Simulation results show an important increase in the offered throughput as well as the number of contenders that can me allocated in a collision-free fashion.
+In the upcoming years the number of devices that exchange data wirelessly is though to increase dramatically, even nowadays home environments no longer lack the wireless network congestion only seen before at office/public spaces (like wireless hot-spots). The current Medium Access Control (MAC) protocol is known to be prone to collisions, which increase with the number of stations in the wireless network. Many proposals have been made to amend the current standard, but at the time of this writing the drawbacks related to collisions have not been fixed. One of the reasons why implementing new MAC protocols is a challenging task relates to the need for really fast processing speed (which can only be achieved at hardware level) and the need for more realistic channel conditions and traffic scenarios.
+
+This PhD Thesis Proposal aims at designing and prototyping next-generation MAC protocols for IEEE 802.11-like networks, going from concept proposals to hardware implementation.
+
+% These challenges reveal the need for collision-free medium access control protocols capable of allocating large number of stations that are foreseeable in the future of wireless local area networks. Furt
+
+
+% The current standard for medium access control in Wireless Local Area Networks (WLANs) called Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA), is by its nature prone to collisions. These happen as a consequence of randomizing the backoff counter each contender must select in order to coordinate its transmissions. Carrier Sense Multiple Access with Enhanced Collision Avoidance (CSMA/ECA) introduces minor adjustments to CSMA/CA  that eliminate the possibility of collisions after a short convergence period. Its principle is to select a deterministic backoff after successful transmissions instead of a random one (as in CSMA/CA), allowing contenders to \emph{own} a time slot in the schedule. 
 \end{abstract}
 
 \section{Introduction}\label{introduction}
