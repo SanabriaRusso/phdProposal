@@ -1,0 +1,12 @@
+For the following paragraphs, an overview of the state of the art is presented. Ranging from the current standard passing through other proposed protocols to end at the description of CSMA/ECA and the Wireless MAC Processor architecture~\cite{WMP}.
+
+It is worthwhile to note that the words \emph{node}, \emph{contenders} and \emph{stations} my be used interchangeably without any different implication.
+
+\subsection{CSMA/CA: the current standard}
+Current WLANs run an instance of CSMA/CA protocol. As briefly mentioned in Section~\ref{introduction}, in this time-slotted networks nodes draw a random backoff timer $B\in[0,CW(k)]$ everytime they have a packet to transmit; where $CW(k)=2^{k}CW_{\min}$ is the contention window at backoff stage $k\in[0,m]$ with $m$ its maximum value, and $CW_{\min}$ being the minimum contention window.
+
+Every passing empty slot decrements the backoff counter in one, and freezes when another node's transmission is detected. When the backoff expires ($B=0$), the contending node attempts transmission.
+
+Because the backoff is computed at random, it is possible that two or more nodes pick the same value. When the corresponding stations attempt transmission none will receive an \emph{ACKnowledgement} (ACK) from the receiver, so transmitters assume that the transmission resulted in a collision.
+
+The ways CSMA/CA handles collisions is summarized in the following bullets:
