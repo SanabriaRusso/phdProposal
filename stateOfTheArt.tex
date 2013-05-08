@@ -3,10 +3,47 @@ For the following paragraphs, an overview of the state of the art is presented. 
 It is worthwhile to note that the words \emph{node}, \emph{contenders} and \emph{stations} my be used interchangeably without any different implication.
 
 \subsection{CSMA/CA: the current standard}
-Current WLANs run an instance of CSMA/CA protocol. As briefly mentioned in Section~\ref{introduction}, in this time-slotted networks nodes draw a random backoff timer $B\in[0,CW(k)]$ everytime they have a packet to transmit; where $CW(k)=2^{k}CW_{\min}$ is the contention window at backoff stage $k\in[0,m]$ with $m$ its maximum value, and $CW_{\min}$ being the minimum contention window.
+Each node in a WLANs runs an instance of CSMA/CA protocol. As briefly mentioned in Section~\ref{introduction}, in this time-slotted networks nodes draw a random backoff counter $B\in[0,CW(k)]$ everytime they have a packet to transmit; where $CW(k)=2^{k}CW_{\min}$ is the contention window at backoff stage $k\in[0,m]$ with $m$ its maximum value, and $CW_{\min}$ being the minimum contention window.
 
 Every passing empty slot decrements the backoff counter in one, and freezes when another node's transmission is detected. When the backoff expires ($B=0$), the contending node attempts transmission.
 
-Because the backoff is computed at random, it is possible that two or more nodes pick the same value. When the corresponding stations attempt transmission none will receive an \emph{ACKnowledgement} (ACK) from the receiver, so transmitters assume that the transmission resulted in a collision.
+Because the backoff is computed at random, it is possible that two or more nodes pick the same value. When the corresponding stations attempt transmission, none will receive an \emph{ACKnowledgement} (ACK) from the receiver given that they attempted transmission at the same time. This is considered a collision.
 
-The ways CSMA/CA handles collisions is summarized in the following bullets:
+The way CSMA/CA handles collisions is summarized in the following bullets:
+\begin{itemize}
+	\item A collision is assumed if no ACK is received by the transmitter.
+	\item CSMA/CA instructs colliding nodes to double their contention window by increasing the backoff stage $k$ in one. This measure doubles the range of possible values drawn when computing the backoff counter, thus reducing the probability of two stations picking the same value.
+\end{itemize}
+
+If a node successfully transmits (receive an ACK from the receiver):
+\begin{itemize}
+	\item Resets its backoff stage ($k=0$).
+	\item If it has another packet to transmit, the node generates a backoff counter and the process is restarted.
+\end{itemize}
+
+CSMA/CA uses a Binary Exponential Backoff (BEB) technique in order to reduce the collision probability (or the event of two stations picking the same backoff counter). Nevertheless, this technique does not eliminate collisions, in fact, stations that have successfully transmitted in the past may collide in the future. Figure~\ref{fig:csmaCA} provides and example of CSMA/CA's behavior.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{csma_ca_short.eps}
+  \caption{For stations running CSMA/CA ($CW_{\min}=16$)
+  \label{fig:csmaCA}}
+\end{figure}
+
+\subsection{Going beyond CSMA/CA's throughput}
+There have been many works proposing modifications to CSMA/CA~\cite{CSMA_ECA,bellalta2009vtc,L_MAC2,HE,bharghavan1994map,wang2004ncr,cali2000dti,lopez-toledo2006aoi,barcelo2008lba,hui2011epp,barcelo2011tcf}. Nevertheless, and as pointed out in~\cite{research2standards}, there is a group among them that considers backwards compatibility with legacy users and at the same time provides levels of throughput beyond the provided by CSMA/CA.
+
+The increase in throughput is the result of choosing a deterministic backoff counter instead of a random one. This approach was first introduced in~\cite{barcelo2008lba} and then tested under different conditions such as saturated and unsaturated scenarios~\cite{CSMA_ECA,bellalta2009vtc,L_MAC2,HE}. It is called Carrier Sense Multiple Access with Enhanced Collision Avoidance (CSMA/ECA) and its similarities and differences with CSMA/CA are described in the following.
+
+CSMA/ECA is a collision-free MAC protocol that allows many contenders to coordinate access to the medium in a totally distributed manner. It starts from the simple idea of picking a deterministic backoff counter $B_{d}=CW(k)/2$ after successful transmissions. By doing so, nodes that successfully transmitted in the past, will do so without collisions in future cycles. Hence the collision-free state.
+
+Nevertheless, when the number of contenders ($n$) is greater than the deterministic backoff ($n>B_{d}$), collisions reappear. CSMA/ECA handles collision much more like CSMA/CA does, but in order to restore the collision-free state with this increased number of contenders, CSMA/ECA instructs nodes {\bfseries not} to reset their backoff stage ($k$), resulting in a increased $B_{d}$. This is called \emph{Hysteresis}, and ensures that many more contenders can be allocated in a collision-free state.
+
+Hysteresis has the undesired effect of instructing some nodes to have greater backoff counters than others, unevenly sharing channel access time. This unfairness issue is leveraged by instructing nodes at backoff stage $k$ to transmit $2^{k}$ packets on each attempt, thus proportionally compensating those nodes at higher backoff stages. This measure is called \emph{Fair Share}~\cite{research2standards}. Figure~\ref{fig:csmaECA} shows and working example of CSMA/ECA.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\linewidth]{csma_eca_different_backoff_short.eps}
+  \caption{For stations running CSMA/ECA ($CW_{\min}=16$)
+  \label{fig:csmaECA}}
+\end{figure}
