@@ -1,0 +1,54 @@
+As was mentioned in the previous sections, CSMA/ECA is capable of achieving higher throughput than CSMA/CA in most common scenarios. Its backoff strategy allows nodes to achieve a collision-free state for a very large number of CSMA/ECA contenders and its fairness mechanisms ensure that all contenders share the same available system throughput in the long-term.
+
+The following paragraphs detail the general and specific objectives of this research. 
+
+\subsection{General Objective}
+In Section~\ref{motivation} is stated that the goal of this PhD Thesis is twofold. Nevertheless, its sole general objective can be described as to:
+\begin{itemize}
+	\item Design and implement on real hardware a totally distributed collision-free MAC protocol for 802.11-like networks, capable of allocating the high number of contenders expected to be seen in upcoming Small-Office/Home-Office (SOHO) scenarios and ensuring greater levels of throughput than the current standard.
+\end{itemize}
+
+\subsection{Specific Objectives}
+Ranging from knowledge requirements to debugging, the following subsection details what are believed to be the required steps to accomplish this research's general objective. Each specific objective is composed of \emph{phases} that dictate the activities required to fulfill it.
+\begin{enumerate}
+	\item Compare CSMA/CA performance with CSMA/ECA by means of simulation.\\
+	
+	{\bfseries Phases:}
+	\begin{enumerate}
+		\item Replicate CSMA/CA's behavior in a discrete event-based simulator.
+		\item Progressively incorporate CSMA/ECA features.
+		\item Identify the performance metrics that will allow an unbiased comparison between the two protocols.\label{metrics}
+		\item Perform simulation tests for metrics gathering under saturated and unsaturated scenarios\label{scenarios}.
+		\item Construct a mixed scenario, where some nodes run CSMA/CA while of others use CSMA/ECA. Repeat the simulations as in Phase~\ref{scenarios}.
+		\item Document the results for future comparison with the hardware implementation.\label{simulationResults}\\
+	\end{enumerate}
+	
+	\item Flash WNICs with the default WMP-CSMA/CA protocol to gather data that will work as a control in future testbeds.\\
+	
+	{\bfseries Phases:}
+	\begin{enumerate}
+		\item Install the WMP-Editor on a host PC to study its components and configuration.
+		\item Identify the required modifications (if any) to replicate CSMA/CA as a WMP.
+		\item Develop automated metric gatherings scripts on the client PCs based on those identified in Phase~\ref{metrics}.
+		\item Flash the necessary WNICs to replicate ad-hoc and Basic Service Set (BSS) WLANs running WMP-CSMA/CA.
+		\item Run experiments with the same parameters used in Phase~\ref{scenarios} and compare the performance evaluation with those obtained in Phase~\ref{simulationResults}.\label{WMPExperiment}\\
+	\end{enumerate}
+
+	\item Progressively modify CSMA/CA into CSMA/ECA using WMP and necessary assembly code.\\
+	
+	{\bfseries Phases:}
+	\begin{enumerate}
+		\item Draw an example of CSMA/ECA using WMP-Editor (shown in Figure~\ref{fig:WMPEditor}) in order to identify the required modifications.\label{WMPModifications}
+		\item Access the underlying ByteCode and identify the segments that correspond with Phase~\ref{WMPModifications}.
+		\item Design or modify the necessary XFSM that would allow the translation of CSMA/ECA into a WMP.
+		\item Flash WNICs with the CSMA/ECA protocol and repeat the experiments as performed in Phase~\ref{WMPExperiment}.\\
+	\end{enumerate}
+
+	\item Extend the functionality of CSMA/ECA to other kind of networks which also benefit from a collision-free environment.\\
+	
+	{\bfseries Phases:}
+	\begin{enumerate}
+		\item Identify other areas where the CSMA/ECA idea could be 
+	\end{enumerate}
+
+\end{enumerate}

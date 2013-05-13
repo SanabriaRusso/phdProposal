@@ -49,9 +49,9 @@ Hysteresis instructs some nodes to have greater backoff counters than others, un
 \end{figure}
 
 \subsection{Prototyping MAC protocols in real hardware}
-MAC protocols face new challenges that come alongside upcoming scenarios, like: vehicular, mesh and ad-hoc networks; quality of service (QoS) and traffic differentiation; spectrum reutilization in cognitive networks. 
+MAC protocols face new challenges that come alongside upcoming scenarios like: vehicular, mesh and ad-hoc networks; quality of service (QoS) and traffic differentiation; and spectrum reutilization in cognitive networks. 
 
-Although many proposals address the shortcomings of the current protocol in these upcoming scenarios, many are discarded either for deviating too much from the current standard operation or for their unlikeliness of real-world deployment when time-critical tasks are modified.
+Although many proposals address the shortcomings of CSMA/CA in these upcoming scenarios, many are discarded either for deviating too much from the current standard operation or for their unlikeliness of real-world deployment when time-critical tasks are modified.
 
 The current implementation of MAC protocols in WNICs is done in a closed form, meaning that usually time-critical (or Lower-MAC) tasks are hardware-coded without the possibility of modification by third-parties.
 
@@ -69,3 +69,5 @@ Wireless MAC Processors (WMP)~\cite{WMP} aim at lowering the barriers for MAC pr
   \caption{WMP-Editor Layout
   \label{fig:WMPEditor}}
 \end{figure}
+
+Although WMP allows for the modification of certain MAC parameters, at its current version it is not possible to fully customize the contention mechanism. For the successful implementation of contention mechanisms like the found in CSMA/ECA, certain backoff function parameters need further customization.
