@@ -15,15 +15,15 @@ Ranging from knowledge requirements to debugging, the following subsection detai
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
-		\item Replicate CSMA/CA's behavior in a discrete event-based simulator.
-		\item Progressively incorporate CSMA/ECA features.
+		\item Replicate CSMA/CA's behavior in a discrete event-based simulator.\label{buildSimulator}
+		\item Progressively incorporate CSMA/ECA features.\label{incorporateECA}
 		\item Identify the performance metrics that will allow an unbiased comparison between the two protocols.\label{metrics}
 		\item Perform simulation tests for metrics gathering under saturated and unsaturated scenarios\label{scenarios}.
 		\item Construct a mixed scenario, where some nodes run CSMA/CA while of others use CSMA/ECA. Repeat the simulations as in Phase~\ref{scenarios}.
 		\item Document the results for future comparison with the hardware implementation.\label{simulationResults}\\
 	\end{enumerate}
 	
-	\item Flash WNICs with the default WMP-CSMA/CA protocol to gather data that will work as a control in future testbeds.\\
+	\item Flash WNICs with the default WMP-CSMA/CA protocol to gather data that will work as a control in future testbeds.\label{learningWMP}\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
@@ -34,21 +34,24 @@ Ranging from knowledge requirements to debugging, the following subsection detai
 		\item Run experiments with the same parameters used in Phase~\ref{scenarios} and compare the performance evaluation with those obtained in Phase~\ref{simulationResults}.\label{WMPExperiment}\\
 	\end{enumerate}
 
-	\item Progressively modify CSMA/CA into CSMA/ECA using WMP and necessary assembly code.\\
+	\item Progressively modify CSMA/CA into CSMA/ECA using WMP and necessary assembly code.\label{ECAinWMP}\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
 		\item Draw an example of CSMA/ECA using WMP-Editor (shown in Figure~\ref{fig:WMPEditor}) in order to identify the required modifications.\label{WMPModifications}
-		\item Access the underlying ByteCode and identify the segments that correspond with Phase~\ref{WMPModifications}.
+		\item Access the underlying ByteCode and identify the segments that correspond with Phase~\ref{WMPModifications}\label{accessByteCode}.
 		\item Design or modify the necessary XFSM that would allow the translation of CSMA/ECA into a WMP.
 		\item Flash WNICs with the CSMA/ECA protocol and repeat the experiments as performed in Phase~\ref{WMPExperiment}.\\
 	\end{enumerate}
 
-	\item Extend the functionality of CSMA/ECA to other kind of networks which also benefit from a collision-free environment.\\
+	\item Extend the functionality of CSMA/ECA to RFID in the attempt of reducing the convergence and tag-reading time.\label{ECAinRFID}\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
-		\item Identify other areas where the CSMA/ECA idea could be 
+		\item Gather metrics about the current performance of the system.
+		\item Adapt CSMA/ECA to replace current MAC protocol.
+		\item Design a simulation environment where metrics can be gathered so a performance evaluation can be made. 
+		\item Document the results and compare them with the performance of the network before incorporating CSMA/ECA.\\
 	\end{enumerate}
 
 \end{enumerate}
