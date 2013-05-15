@@ -1,4 +1,4 @@
-For the following paragraphs, an overview of the state of the art is presented. Ranging from the current standard passing through other proposed protocols to end at the description of CSMA/ECA and the Wireless MAC Processor architecture~\cite{WMP}.
+For the following paragraphs an overview of the state of the art is presented. Ranging from the current standard, referencing other proposed protocols, to end at the description of CSMA/ECA and the Wireless MAC Processor architecture~\cite{WMP}.
 
 It is worthwhile to note that the words \emph{node}, \emph{contenders} and \emph{stations} may be used interchangeably without any different implication.
 
@@ -7,7 +7,7 @@ Each node in a WLANs runs an instance of CSMA/CA protocol. As briefly mentioned 
 
 Every passing empty slot decrements the backoff counter in one, and freezes when another node's transmission is detected. When the backoff expires ($B=0$), the contending node attempts transmission.
 
-Because the backoff is computed at random, it is possible that two or more nodes pick the same value. When the corresponding stations attempt transmission, none will receive an \emph{ACKnowledgement} (ACK) from the receiver given that they attempted transmission at the same time. This is considered a collision.
+Because the backoff is computed at random, it is possible that two or more nodes pick the same value. When the corresponding stations attempt transmission, none will receive an \emph{ACKnowledgement} (ACK) from the receiver given that they attempted transmission at the same time. This is considered a collision.\\
 
 The way CSMA/CA handles collisions is summarized in the following bullets:
 \begin{itemize}
@@ -51,7 +51,7 @@ Hysteresis instructs some nodes to have greater backoff counters than others, un
 \subsection{Prototyping MAC protocols in real hardware}
 MAC protocols face new challenges that come alongside upcoming scenarios like: vehicular, mesh and ad-hoc networks; quality of service (QoS) and traffic differentiation; and spectrum reutilization in cognitive networks. 
 
-Although many proposals address the shortcomings of CSMA/CA in these upcoming scenarios, many are discarded either for deviating too much from the current standard operation or for their unlikeliness of real-world deployment when time-critical tasks are modified.
+Although plenty proposals address the shortcomings of CSMA/CA to be applied in new scenarios, many are discarded either for deviating too much from the current standard operation or for their unlikeliness of real-world deployment when time-critical tasks are modified.
 
 The current implementation of MAC protocols in WNICs is done in a closed form, meaning that usually time-critical (or Lower-MAC) tasks are hardware-coded without the possibility of modification by third-parties.
 
@@ -59,7 +59,7 @@ One step towards openness came with the release of OpenFWWF~\cite{OpenFWWF}, the
 
 Nevertheless, OpenFWWF is tightly related to the hardware platform it was released for (Broadcom/AirForce54G cards) and extensions require rewriting of large chunks of assembly code, which makes it difficult to implement by non-experts.
 
-Wireless MAC Processors (WMP)~\cite{WMP} aim at lowering the barriers for MAC protocol implementation in commodity hardware. By carefully identifying and translating the MAC operations into different Extended Finite State Machines (XFSM), it became possible to designate Lower-MAC tasks to the general-purpose CPU equipped in most WNICs. Furthermore, the WMP-Editor (shown in Figure~\ref{fig:WMPEditor}) allows programmers to combine different XFSM and configure the MAC events and conditions that would trigger their tasks.
+Wireless MAC Processors (WMP)~\cite{WMP} aim at lowering the barriers for MAC protocol implementation in commodity hardware. By carefully identifying and translating the MAC operations into different Extended Finite State Machines (XFSM), it became possible to designate Lower-MAC tasks to the general-purpose CPU equipped in most WNICs. Furthermore, the WMP-Editor (shown in Figure~\ref{fig:WMPEditor}) allows programmers to combine different XFSM and configure the MAC events and conditions that would trigger their preconfigured tasks.
 
 % and allow programmers to decide when those tasks ought to be performed (based on events and/or conditions). 
 
