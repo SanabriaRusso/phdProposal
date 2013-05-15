@@ -1,0 +1,47 @@
+As was mentioned in Section~\ref{planByYears}, most of the first specific objective has been successfully developed. Its results derived in collaboration with experts from international institutions and two publications:
+
+\begin{enumerate}
+	\item Sanabria-Russo, L., Barcelo, J., Bellalta, B: ``Fairness in Collision-Free WLANs''. INFOCOM 2013 Student Poster Session, Turin - Italy. ArXiv e-prints (February 2013).\label{posterInfocom}
+	\item Sanabria-Russo, L., Faridi, A., Bellalta, B., Barcelo, J., Oliver, M.: ``Future Evolution of CSMA Protocols for the IEEE 802.11 Standard''. Second IEEE ICC Workshop on Telecommunications Standards: From Research to Standards (June 2013).\label{ICCPaper}
+\end{enumerate}
+
+Results of publication~\ref{posterInfocom}~\cite{fairness-ECA} are summarized in Figure~\ref{fig:INFOCOMPoster}. The work includes the introduction of the concept of hysteresis and fair share to CSMA/ECA. It involved the programming of the MAC protocol in a modified version of the COST simulator~\cite{COST} as well as fruitful collaboration with current members of the team that originally proposed the idea in~\cite{L_MAC2}.\\
+
+Results from publication~\ref{ICCPaper}~\cite{research2standards} are contained in Figure~\ref{fig:ICCPaper}. Apart from showing the throughput enhancements over CSMA/CA, it is also shown how the proportion of collision slots reduces to zero when using CSMA/ECA. Furthermore, code snippets are presented to highlight the slight variations between CSMA/ECA and CSMA/CA.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{ECA-vs-CA-FINAL.eps}
+  \caption{(a)}
+  \label{fig:DCFvsECA}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{ECA-w-enhancements-FINAL.eps}
+  \caption{(b)}
+  \label{fig:ECAPerformace}
+\end{subfigure}
+\caption{\ref{fig:DCFvsECA}) Throughput of CSMA/CA vs. CSMA/ECA without hysteresis and fair share. \ref{fig:ECAPerformace}) Throughput and fairness when incorporating hysteresis and fair share to CSMA/ECA.}
+\label{fig:INFOCOMPoster}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.7\linewidth,angle=-90]{avgCollisions-12sta.eps}
+  \caption{(a)}
+  \label{fig:avgCollisions}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.7\linewidth,angle=-90]{throughput-combined.eps}
+  \caption{(b)}
+  \label{fig:throughputCombined}
+\end{subfigure}
+\caption{\ref{fig:avgCollisions}) Cumulative fraction of slots spent in collisions for $N=12$ nodes. \ref{fig:throughputCombined}) Throughput.}
+\label{fig:ICCPaper}
+\end{figure}
+
