@@ -3,7 +3,7 @@ For the following paragraphs an overview of the state of the art is presented. R
 It is worthwhile to note that the words \emph{node}, \emph{contenders} and \emph{stations} may be used interchangeably without any different implication.
 
 \subsection{CSMA/CA: the current standard}
-Each node in a WLANs runs an instance of CSMA/CA protocol. As briefly mentioned in Section~\ref{introduction}, in this time-slotted networks nodes draw a random backoff counter $B\in[0,CW(k)]$ everytime they have a packet to transmit; where $CW(k)=2^{k}CW_{\min}$ is the contention window at backoff stage $k\in[0,m]$ with $m$ its maximum value, and $CW_{\min}$ being the minimum contention window.
+Each node in a WLANs runs an instance of CSMA/CA protocol. As briefly mentioned in Section~\ref{introduction}, in this time-slotted networks nodes draw a random backoff counter $B\in[0,CW(k)]$ everytime they have a packet to transmit; where $CW(k)=2^{k}CW_{\min}$ is the contention window at backoff stage $k\in[0,m]$ with $m$ its maximum value, and $CW_{\min}$ being the minimum contention window with typical value of $CW_{\min}=16$.
 
 Every passing empty slot decrements the backoff counter in one, and freezes when another node's transmission is detected. When the backoff expires ($B=0$), the contending node attempts transmission.
 
@@ -21,7 +21,7 @@ If a node successfully transmits (receives an ACK from the receiver):
 	\item If it has another packet to transmit, the node generates a backoff counter and the process is restarted.
 \end{itemize}
 
-CSMA/CA uses a Binary Exponential Backoff (BEB) technique in order to reduce the collision probability (or the event of two stations picking the same backoff counter). Nevertheless, this technique does not eliminate collisions, in fact, stations that have successfully transmitted in the past may collide in the future. Figure~\ref{fig:csmaCA} provides and example of CSMA/CA's behavior.
+CSMA/CA uses a Binary Exponential Backoff (BEB) technique in order to reduce the collision probability (or the event of two stations picking the same backoff counter). Nevertheless, this technique does not eliminate collisions. In fact, stations that have successfully transmitted in the past may collide in the future. Figure~\ref{fig:csmaCA} provides and example of CSMA/CA's behavior.
 
 \begin{figure}[htbp]
   \centering
@@ -35,7 +35,7 @@ There have been many works proposing modifications to CSMA/CA~\cite{CSMA_ECA,bel
 
 It is called Carrier Sense Multiple Access with Enhanced Collision Avoidance (CSMA/ECA) and its similarities and differences with CSMA/CA are described in the following.
 
-CSMA/ECA is a collision-free MAC protocol that allows many contenders to coordinate access to the medium in a totally distributed manner. It starts from the simple idea of picking a deterministic backoff counter $B_{d}=CW(k)/2$ after successful transmissions. By doing so, nodes that successfully transmitted in the past, will do so without colliding with other CSMA/ECA nodes in future cycles. Hence the collision-free state.
+CSMA/ECA is a collision-free MAC protocol that allows many contenders to coordinate access to the medium in a totally distributed manner. It starts from the simple idea of picking a deterministic backoff counter $B_{d}=CW(k)/2$ after successful transmissions. By doing so, nodes that successfully transmitted in the past, will do so without colliding with other successful CSMA/ECA nodes in future cycles. Hence the collision-free state.
 
 Nevertheless, when the number of contenders ($n$) is greater than the deterministic backoff ($n>B_{d}$), collisions reappear. CSMA/ECA handles collision much more like CSMA/CA does, but in order to restore the collision-free state with this increased number of contenders, CSMA/ECA instructs nodes {\bfseries not} to reset their backoff stage ($k$), resulting in a increased $B_{d}$. This is called \emph{Hysteresis}, and ensures that many more contenders can be allocated in a collision-free state.
 
