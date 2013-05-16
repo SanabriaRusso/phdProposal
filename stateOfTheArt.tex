@@ -31,15 +31,15 @@ CSMA/CA uses a Binary Exponential Backoff (BEB) technique in order to reduce the
 \end{figure}
 
 \subsection{Going beyond CSMA/CA's throughput}
-There have been many works proposing modifications to CSMA/CA~\cite{CSMA_ECA,bellalta2009vtc,L_MAC2,HE,bharghavan1994map,wang2004ncr,cali2000dti,lopez-toledo2006aoi,barcelo2008lba,hui2011epp,barcelo2011tcf}. Nevertheless, and as pointed out in~\cite{research2standards}, there is a group among them that considers backwards compatibility with legacy users and at the same time provides levels of throughput beyond those provided by CSMA/CA.
+There have been many works proposing modifications to CSMA/CA~\cite{CSMA_ECA,bellalta2009vtc,L_MAC2,HE,bharghavan1994map,wang2004ncr,cali2000dti,lopez-toledo2006aoi,barcelo2008lba,hui2011epp,barcelo2011tcf}. Nevertheless, and as pointed out in~\cite{research2standards}, there is a group among them that considers backwards compatibility with legacy users and at the same time provides levels of throughput beyond those provided by CSMA/CA. This performance boost is the result of eliminating collisions by choosing a deterministic backoff counter instead of a random one. The approach was first introduced in~\cite{barcelo2008lba} and then tested under different conditions such as saturated and unsaturated scenarios~\cite{CSMA_ECA,bellalta2009vtc,L_MAC2,HE}. 
 
-The increase in throughput is the result of choosing a deterministic backoff counter instead of a random one. This approach was first introduced in~\cite{barcelo2008lba} and then tested under different conditions such as saturated and unsaturated scenarios~\cite{CSMA_ECA,bellalta2009vtc,L_MAC2,HE}. It is called Carrier Sense Multiple Access with Enhanced Collision Avoidance (CSMA/ECA) and its similarities and differences with CSMA/CA are described in the following.
+It is called Carrier Sense Multiple Access with Enhanced Collision Avoidance (CSMA/ECA) and its similarities and differences with CSMA/CA are described in the following.
 
 CSMA/ECA is a collision-free MAC protocol that allows many contenders to coordinate access to the medium in a totally distributed manner. It starts from the simple idea of picking a deterministic backoff counter $B_{d}=CW(k)/2$ after successful transmissions. By doing so, nodes that successfully transmitted in the past, will do so without colliding with other CSMA/ECA nodes in future cycles. Hence the collision-free state.
 
 Nevertheless, when the number of contenders ($n$) is greater than the deterministic backoff ($n>B_{d}$), collisions reappear. CSMA/ECA handles collision much more like CSMA/CA does, but in order to restore the collision-free state with this increased number of contenders, CSMA/ECA instructs nodes {\bfseries not} to reset their backoff stage ($k$), resulting in a increased $B_{d}$. This is called \emph{Hysteresis}, and ensures that many more contenders can be allocated in a collision-free state.
 
-Hysteresis instructs some nodes to have greater backoff counters than others, unevenly sharing channel access time. This unfairness issue is leveraged by instructing nodes at backoff stage $k$ to transmit $2^{k}$ packets on each attempt, thus proportionally compensating those nodes at higher backoff stages. This measure was first proposed by Fang et al.~\cite{L_MAC2}, and further implemented as \emph{Fair Share}~\cite{research2standards} for CSMA/ECA. Figure~\ref{fig:csmaECA} shows and working example of CSMA/ECA.
+Hysteresis instructs some nodes to have greater backoff counters than others, unevenly sharing channel access time. This unfairness issue is leveraged by instructing nodes at backoff stage $k$ to transmit $2^{k}$ packets on each attempt, thus proportionally compensating those nodes at higher backoff stages. This measure was first proposed by Fang et al.~\cite{L_MAC2}, and further implemented as \emph{Fair Share}~\cite{research2standards} for CSMA/ECA. Figure~\ref{fig:csmaECA} shows a working example of CSMA/ECA.
 
 \begin{figure}[htbp]
   \centering
@@ -70,4 +70,4 @@ Wireless MAC Processors (WMP)~\cite{WMP} aim at lowering the barriers for MAC pr
   \label{fig:WMPEditor}}
 \end{figure}
 
-Although WMP allows for the modification of certain MAC parameters, at its current version it is not possible to fully customize the contention mechanism. For the successful implementation of contention mechanisms like the found in CSMA/ECA, certain backoff function parameters need further customization.
+Although WMP-Editor allows for the modification of certain MAC parameters, at its current version it is not possible to fully customize the contention mechanism. For the successful implementation of contention mechanisms like the one found in CSMA/ECA, certain backoff function parameters need further customization.
