@@ -1,8 +1,8 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Title: gantt.fig
+%%Title: /home/lsr/Dropbox/PhD/NeTS/git/phdProposal/gantt.fig
 %%Creator: fig2dev Version 3.2 Patchlevel 5d
-%%CreationDate: Tue May 14 12:40:31 2013
-%%BoundingBox: 0 0 798 628
+%%CreationDate: Tue May 21 16:09:47 2013
+%%BoundingBox: 0 0 798 827
 %Magnification: 1.0000
 %%EndComments
 %%BeginProlog
@@ -356,6 +356,35 @@ false PATredef
   end
 } bind def
 
+% this is the pattern fill program from the Second edition Reference Manual
+% with changes to call the above pattern fill
+% left30
+11 dict begin
+/PaintType 1 def
+/PatternType 1 def
+/TilingType 1 def
+/BBox [0 0 1 1] def
+/XStep 1 def
+/YStep 1 def
+/PatWidth 1 def
+/PatHeight 1 def
+/Multi 2 def
+/PaintData [
+  { clippath } bind
+  { 32 16 true [ 32 0 0 -16 0 16 ]
+	{<c000c000300030000c000c000300030000c000c000300030
+	000c000c00030003c000c000300030000c000c0003000300
+	00c000c000300030000c000c00030003>}
+     imagemask } bind
+] def
+/PaintProc {
+	pop
+	exec fill
+} def
+currentdict
+end
+/P1 exch def
+
 % right30
 11 dict begin
 /PaintType 1 def
@@ -518,6 +547,33 @@ currentdict
 end
 /P7 exch def
 
+% vertical bricks
+11 dict begin
+/PaintType 1 def
+/PatternType 1 def
+/TilingType 1 def
+/BBox [0 0 1 1] def
+/XStep 1 def
+/YStep 1 def
+/PatWidth 1 def
+/PatHeight 1 def
+/Multi 2 def
+/PaintData [
+  { clippath } bind
+  { 16 16 true [ 16 0 0 -16 0 16 ]
+	{<ff8080808080808080808080
+	  8080808080ff808080808080
+	  8080808080808080> }
+        imagemask } bind
+] def
+/PaintProc {
+	pop
+	exec fill
+} def
+currentdict
+end
+/P8 exch def
+
 /cp {closepath} bind def
 /ef {eofill} bind def
 /gr {grestore} bind def
@@ -554,8 +610,8 @@ end
 
 /pageheader {
 save
-newpath 0 628 moveto 0 0 lineto 798 0 lineto 798 628 lineto closepath clip newpath
--54.6 597.4 translate
+newpath 0 827 moveto 0 0 lineto 798 0 lineto 798 827 lineto closepath clip newpath
+-54.6 795.8 translate
 1 -1 scale
 $F2psBegin
 10 setmiterlimit
@@ -576,186 +632,226 @@ pageheader
 % Polyline
 0 slj
 0 slc
-15.000 slw
-n 900 900 m
- 13500 900 l gs col0 s gr 
-% Polyline
 7.500 slw
 n 4155 900 m 4050 900 4050 1245 105 arcto 4 {pop} repeat
   4050 1350 7095 1350 105 arcto 4 {pop} repeat
   7200 1350 7200 1005 105 arcto 4 {pop} repeat
   7200 900 4155 900 105 arcto 4 {pop} repeat
  cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P2 [16 0 0 -8 270.00 60.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P1 [16 0 0 -8 270.00 60.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
+15.000 slw
+n 900 -450 m
+ 4050 900 l gs col0 s gr 
+% Polyline
+30.000 slw
+n 1005 -450 m 900 -450 900 12495 105 arcto 4 {pop} repeat
+  900 12600 13395 12600 105 arcto 4 {pop} repeat
+  13500 12600 13500 -345 105 arcto 4 {pop} repeat
+  13500 -450 1005 -450 105 arcto 4 {pop} repeat
+ cp gs col0 s gr 
+% Polyline
+15.000 slw
+n 7200 -450 m
+ 7200 12600 l gs col0 s gr 
+% Polyline
+n 10350 -450 m
+ 10350 12600 l gs col0 s gr 
+% Polyline
+7.500 slw
+n 6405 4050 m 6300 4050 6300 4395 105 arcto 4 {pop} repeat
+  6300 4500 8445 4500 105 arcto 4 {pop} repeat
+  8550 4500 8550 4155 105 arcto 4 {pop} repeat
+  8550 4050 6405 4050 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P1 [16 0 0 -8 420.00 270.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 6405 4500 m 6300 4500 6300 4845 105 arcto 4 {pop} repeat
+  6300 4950 8445 4950 105 arcto 4 {pop} repeat
+  8550 4950 8550 4605 105 arcto 4 {pop} repeat
+  8550 4500 6405 4500 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P2 [16 0 0 -8 420.00 300.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 7305 4950 m 7200 4950 7200 5295 105 arcto 4 {pop} repeat
+  7200 5400 8895 5400 105 arcto 4 {pop} repeat
+  9000 5400 9000 5055 105 arcto 4 {pop} repeat
+  9000 4950 7305 4950 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P3 [16 0 0 -8 480.00 330.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 8205 5400 m 8100 5400 8100 5745 105 arcto 4 {pop} repeat
+  8100 5850 9345 5850 105 arcto 4 {pop} repeat
+  9450 5850 9450 5505 105 arcto 4 {pop} repeat
+  9450 5400 8205 5400 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P4 [16 0 0 -16 540.00 360.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 8205 5850 m 8100 5850 8100 6195 105 arcto 4 {pop} repeat
+  8100 6300 9345 6300 105 arcto 4 {pop} repeat
+  9450 6300 9450 5955 105 arcto 4 {pop} repeat
+  9450 5850 8205 5850 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P5 [16 0 0 -16 540.00 390.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 8205 6300 m 8100 6300 8100 6645 105 arcto 4 {pop} repeat
+  8100 6750 9345 6750 105 arcto 4 {pop} repeat
+  9450 6750 9450 6405 105 arcto 4 {pop} repeat
+  9450 6300 8205 6300 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P6 [16 0 0 -16 540.00 420.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 8205 6750 m 8100 6750 8100 7095 105 arcto 4 {pop} repeat
+  8100 7200 10245 7200 105 arcto 4 {pop} repeat
+  10350 7200 10350 6855 105 arcto 4 {pop} repeat
+  10350 6750 8205 6750 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P7 [16 0 0 16 540.00 450.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 8205 7200 m 8100 7200 8100 7545 105 arcto 4 {pop} repeat
+  8100 7650 10245 7650 105 arcto 4 {pop} repeat
+  10350 7650 10350 7305 105 arcto 4 {pop} repeat
+  10350 7200 8205 7200 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P8 [16 0 0 -16 540.00 480.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+15.000 slw
+n 900 900 m
+ 13500 900 l gs col0 s gr 
+% Polyline
+7.500 slw
 n 4155 1350 m 4050 1350 4050 1695 105 arcto 4 {pop} repeat
   4050 1800 7095 1800 105 arcto 4 {pop} repeat
   7200 1800 7200 1455 105 arcto 4 {pop} repeat
   7200 1350 4155 1350 105 arcto 4 {pop} repeat
  cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P3 [16 0 0 -8 270.00 90.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P2 [16 0 0 -8 270.00 90.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
+15.000 slw
+n 4050 -450 m
+ 4050 12600 l gs col0 s gr 
+% Polyline
+7.500 slw
 n 4155 1800 m 4050 1800 4050 2145 105 arcto 4 {pop} repeat
   4050 2250 7095 2250 105 arcto 4 {pop} repeat
   7200 2250 7200 1905 105 arcto 4 {pop} repeat
   7200 1800 4155 1800 105 arcto 4 {pop} repeat
  cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P4 [16 0 0 -16 270.00 120.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P3 [16 0 0 -8 270.00 120.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
 n 4155 2250 m 4050 2250 4050 2595 105 arcto 4 {pop} repeat
   4050 2700 7095 2700 105 arcto 4 {pop} repeat
   7200 2700 7200 2355 105 arcto 4 {pop} repeat
   7200 2250 4155 2250 105 arcto 4 {pop} repeat
  cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P5 [16 0 0 -16 270.00 150.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-n 4155 2250 m 4050 2250 4050 2595 105 arcto 4 {pop} repeat
-  4050 2700 7095 2700 105 arcto 4 {pop} repeat
-  7200 2700 7200 2355 105 arcto 4 {pop} repeat
-  7200 2250 4155 2250 105 arcto 4 {pop} repeat
- cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P5 [16 0 0 -16 270.00 150.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P4 [16 0 0 -16 270.00 150.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
 n 4155 2700 m 4050 2700 4050 3045 105 arcto 4 {pop} repeat
   4050 3150 7095 3150 105 arcto 4 {pop} repeat
   7200 3150 7200 2805 105 arcto 4 {pop} repeat
   7200 2700 4155 2700 105 arcto 4 {pop} repeat
  cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P6 [16 0 0 -16 270.00 180.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P5 [16 0 0 -16 270.00 180.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
 n 4155 3150 m 4050 3150 4050 3495 105 arcto 4 {pop} repeat
   4050 3600 7095 3600 105 arcto 4 {pop} repeat
   7200 3600 7200 3255 105 arcto 4 {pop} repeat
   7200 3150 4155 3150 105 arcto 4 {pop} repeat
  cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P7 [16 0 0 16 270.00 210.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P6 [16 0 0 -16 270.00 210.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-15.000 slw
-n 900 3600 m
- 13500 3600 l gs col0 s gr 
-%   
+n 4155 3600 m 4050 3600 4050 3945 105 arcto 4 {pop} repeat
+  4050 4050 7095 4050 105 arcto 4 {pop} repeat
+  7200 4050 7200 3705 105 arcto 4 {pop} repeat
+  7200 3600 4155 3600 105 arcto 4 {pop} repeat
+ cp gs /PC [[0.53 0.81 1.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P7 [16 0 0 16 270.00 240.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-n 4050 -450 m
- 4050 9450 l gs col0 s gr 
-% Polyline
-n 10350 -450 m
- 10350 9450 l gs col0 s gr 
-% Polyline
-7.500 slw
-n 5955 3600 m 5850 3600 5850 3945 105 arcto 4 {pop} repeat
-  5850 4050 10245 4050 105 arcto 4 {pop} repeat
-  10350 4050 10350 3705 105 arcto 4 {pop} repeat
-  10350 3600 5955 3600 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P2 [16 0 0 -8 390.00 240.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-n 5955 4050 m 5850 4050 5850 4395 105 arcto 4 {pop} repeat
-  5850 4500 10245 4500 105 arcto 4 {pop} repeat
-  10350 4500 10350 4155 105 arcto 4 {pop} repeat
-  10350 4050 5955 4050 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P3 [16 0 0 -8 390.00 270.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-n 7305 4500 m 7200 4500 7200 4845 105 arcto 4 {pop} repeat
-  7200 4950 10245 4950 105 arcto 4 {pop} repeat
-  10350 4950 10350 4605 105 arcto 4 {pop} repeat
-  10350 4500 7305 4500 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P4 [16 0 0 -16 480.00 300.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-n 7305 4950 m 7200 4950 7200 5295 105 arcto 4 {pop} repeat
-  7200 5400 10245 5400 105 arcto 4 {pop} repeat
-  10350 5400 10350 5055 105 arcto 4 {pop} repeat
-  10350 4950 7305 4950 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P5 [16 0 0 -16 480.00 330.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-n 7305 5400 m 7200 5400 7200 5745 105 arcto 4 {pop} repeat
-  7200 5850 10245 5850 105 arcto 4 {pop} repeat
-  10350 5850 10350 5505 105 arcto 4 {pop} repeat
-  10350 5400 7305 5400 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P6 [16 0 0 -16 480.00 360.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-15.000 slw
-n 900 5850 m
- 13500 5850 l gs col0 s gr 
-% Polyline
-n 7200 -450 m
- 7200 9450 l gs col0 s gr 
-% Polyline
-7.500 slw
-n 9105 5850 m 9000 5850 9000 6195 105 arcto 4 {pop} repeat
-  9000 6300 10245 6300 105 arcto 4 {pop} repeat
-  10350 6300 10350 5955 105 arcto 4 {pop} repeat
-  10350 5850 9105 5850 105 arcto 4 {pop} repeat
+n 9555 7650 m 9450 7650 9450 7995 105 arcto 4 {pop} repeat
+  9450 8100 10245 8100 105 arcto 4 {pop} repeat
+  10350 8100 10350 7755 105 arcto 4 {pop} repeat
+  10350 7650 9555 7650 105 arcto 4 {pop} repeat
  cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P2 [16 0 0 -8 600.00 390.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P1 [16 0 0 -8 630.00 510.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-n 9105 6300 m 9000 6300 9000 6645 105 arcto 4 {pop} repeat
-  9000 6750 10245 6750 105 arcto 4 {pop} repeat
-  10350 6750 10350 6405 105 arcto 4 {pop} repeat
-  10350 6300 9105 6300 105 arcto 4 {pop} repeat
+n 9555 8100 m 9450 8100 9450 8445 105 arcto 4 {pop} repeat
+  9450 8550 10245 8550 105 arcto 4 {pop} repeat
+  10350 8550 10350 8205 105 arcto 4 {pop} repeat
+  10350 8100 9555 8100 105 arcto 4 {pop} repeat
  cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P3 [16 0 0 -8 600.00 420.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P2 [16 0 0 -8 630.00 540.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-n 10005 6750 m 9900 6750 9900 7095 105 arcto 4 {pop} repeat
-  9900 7200 13395 7200 105 arcto 4 {pop} repeat
-  13500 7200 13500 6855 105 arcto 4 {pop} repeat
-  13500 6750 10005 6750 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P4 [16 0 0 -16 660.00 450.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+n 900 4050 m
+ 13500 4050 l gs col0 s gr 
 % Polyline
-n 10005 7200 m 9900 7200 9900 7545 105 arcto 4 {pop} repeat
-  9900 7650 13395 7650 105 arcto 4 {pop} repeat
-  13500 7650 13500 7305 105 arcto 4 {pop} repeat
-  13500 7200 10005 7200 105 arcto 4 {pop} repeat
- cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P5 [16 0 0 -16 660.00 480.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-15.000 slw
 n 900 7650 m
  13500 7650 l gs col0 s gr 
 % Polyline
-7.500 slw
-n 10455 7650 m 10350 7650 10350 7995 105 arcto 4 {pop} repeat
-  10350 8100 13395 8100 105 arcto 4 {pop} repeat
-  13500 8100 13500 7755 105 arcto 4 {pop} repeat
-  13500 7650 10455 7650 105 arcto 4 {pop} repeat
- cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P2 [16 0 0 -8 690.00 510.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
-n 10455 8100 m 10350 8100 10350 8445 105 arcto 4 {pop} repeat
-  10350 8550 13395 8550 105 arcto 4 {pop} repeat
-  13500 8550 13500 8205 105 arcto 4 {pop} repeat
-  13500 8100 10455 8100 105 arcto 4 {pop} repeat
- cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P3 [16 0 0 -8 690.00 540.00] PATmp PATsp ef gr PATusp gs col0 s gr 
-% Polyline
 n 10455 8550 m 10350 8550 10350 8895 105 arcto 4 {pop} repeat
-  10350 9000 13395 9000 105 arcto 4 {pop} repeat
-  13500 9000 13500 8655 105 arcto 4 {pop} repeat
-  13500 8550 10455 8550 105 arcto 4 {pop} repeat
+  10350 9000 12045 9000 105 arcto 4 {pop} repeat
+  12150 9000 12150 8655 105 arcto 4 {pop} repeat
+  12150 8550 10455 8550 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P3 [16 0 0 -8 690.00 570.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 10905 9000 m 10800 9000 10800 9345 105 arcto 4 {pop} repeat
+  10800 9450 12045 9450 105 arcto 4 {pop} repeat
+  12150 9450 12150 9105 105 arcto 4 {pop} repeat
+  12150 9000 10905 9000 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P4 [16 0 0 -16 720.00 600.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 10455 9900 m 10350 9900 10350 10245 105 arcto 4 {pop} repeat
+  10350 10350 11145 10350 105 arcto 4 {pop} repeat
+  11250 10350 11250 10005 105 arcto 4 {pop} repeat
+  11250 9900 10455 9900 105 arcto 4 {pop} repeat
  cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P4 [16 0 0 -16 690.00 570.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P1 [16 0 0 -8 690.00 660.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-n 10455 9000 m 10350 9000 10350 9345 105 arcto 4 {pop} repeat
-  10350 9450 13395 9450 105 arcto 4 {pop} repeat
-  13500 9450 13500 9105 105 arcto 4 {pop} repeat
-  13500 9000 10455 9000 105 arcto 4 {pop} repeat
+n 10455 10350 m 10350 10350 10350 10695 105 arcto 4 {pop} repeat
+  10350 10800 11145 10800 105 arcto 4 {pop} repeat
+  11250 10800 11250 10455 105 arcto 4 {pop} repeat
+  11250 10350 10455 10350 105 arcto 4 {pop} repeat
  cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
-15.00 15.00 sc P5 [16 0 0 -16 690.00 600.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+15.00 15.00 sc P2 [16 0 0 -8 690.00 690.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-30.000 slw
-n 1005 -450 m 900 -450 900 9345 105 arcto 4 {pop} repeat
-  900 9450 13395 9450 105 arcto 4 {pop} repeat
-  13500 9450 13500 -345 105 arcto 4 {pop} repeat
-  13500 -450 1005 -450 105 arcto 4 {pop} repeat
- cp gs col0 s gr 
+n 11355 10800 m 11250 10800 11250 11145 105 arcto 4 {pop} repeat
+  11250 11250 12045 11250 105 arcto 4 {pop} repeat
+  12150 11250 12150 10905 105 arcto 4 {pop} repeat
+  12150 10800 11355 10800 105 arcto 4 {pop} repeat
+ cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P3 [16 0 0 -8 750.00 720.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 % Polyline
-15.000 slw
-n 900 -450 m
- 4050 900 l gs col0 s gr 
+n 11355 11250 m 11250 11250 11250 11595 105 arcto 4 {pop} repeat
+  11250 11700 12045 11700 105 arcto 4 {pop} repeat
+  12150 11700 12150 11355 105 arcto 4 {pop} repeat
+  12150 11250 11355 11250 105 arcto 4 {pop} repeat
+ cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P4 [16 0 0 -16 750.00 750.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 12255 11700 m 12150 11700 12150 12045 105 arcto 4 {pop} repeat
+  12150 12150 13395 12150 105 arcto 4 {pop} repeat
+  13500 12150 13500 11805 105 arcto 4 {pop} repeat
+  13500 11700 12255 11700 105 arcto 4 {pop} repeat
+ cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P5 [16 0 0 -16 810.00 780.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 12255 12150 m 12150 12150 12150 12495 105 arcto 4 {pop} repeat
+  12150 12600 13395 12600 105 arcto 4 {pop} repeat
+  13500 12600 13500 12255 105 arcto 4 {pop} repeat
+  13500 12150 12255 12150 105 arcto 4 {pop} repeat
+ cp gs /PC [[0.00 1.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P6 [16 0 0 -16 810.00 810.00] PATmp PATsp ef gr PATusp gs col0 s gr 
+% Polyline
+n 900 9900 m
+ 13500 9900 l gs col0 s gr 
+% Polyline
+n 11355 9450 m 11250 9450 11250 9795 105 arcto 4 {pop} repeat
+  11250 9900 13395 9900 105 arcto 4 {pop} repeat
+  13500 9900 13500 9555 105 arcto 4 {pop} repeat
+  13500 9450 11355 9450 105 arcto 4 {pop} repeat
+ cp gs /PC [[1.00 0.00 0.00] [0.00 0.00 0.00]] def
+15.00 15.00 sc P5 [16 0 0 -16 750.00 630.00] PATmp PATsp ef gr PATusp gs col0 s gr 
 /Times-Roman ff 349.25 scf sf
 2070 1260 m
 gs 1 -1 sc (1\(a\)) col0 sh gr
@@ -774,45 +870,6 @@ gs 1 -1 sc (1\(e\)) col0 sh gr
 /Times-Roman ff 349.25 scf sf
 2070 3510 m
 gs 1 -1 sc (1\(f\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 3960 m
-gs 1 -1 sc (2\(a\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 4410 m
-gs 1 -1 sc (2\(b\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 4860 m
-gs 1 -1 sc (2\(c\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 5310 m
-gs 1 -1 sc (2\(d\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 5760 m
-gs 1 -1 sc (2\(e\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 6210 m
-gs 1 -1 sc (3\(a\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 6660 m
-gs 1 -1 sc (3\(b\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 7110 m
-gs 1 -1 sc (3\(c\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 7560 m
-gs 1 -1 sc (3\(d\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 8010 m
-gs 1 -1 sc (4\(a\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 8460 m
-gs 1 -1 sc (4\(b\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 8910 m
-gs 1 -1 sc (4\(c\)) col0 sh gr
-/Times-Roman ff 349.25 scf sf
-2070 9360 m
-gs 1 -1 sc (4\(d\)) col0 sh gr
 /Times-Bold ff 349.25 scf sf
 2700 0 m
 gs 1 -1 sc (Years) col0 sh gr
@@ -820,14 +877,76 @@ gs 1 -1 sc (Years) col0 sh gr
 5400 450 m
 gs 1 -1 sc (1st) col0 sh gr
 /Times-Bold ff 349.25 scf sf
-8775 450 m
-gs 1 -1 sc (2nd) col0 sh gr
-/Times-Bold ff 349.25 scf sf
 11700 450 m
 gs 1 -1 sc (3rd) col0 sh gr
 /Times-Bold ff 349.25 scf sf
 1350 450 m
 gs 1 -1 sc (Phases) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 3960 m
+gs 1 -1 sc (1\(g\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 4410 m
+gs 1 -1 sc (2\(a\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 4860 m
+gs 1 -1 sc (2\(b\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 5310 m
+gs 1 -1 sc (2\(c\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 5760 m
+gs 1 -1 sc (2\(d\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 6210 m
+gs 1 -1 sc (2\(e\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 6660 m
+gs 1 -1 sc (2\(f\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 7110 m
+gs 1 -1 sc (2\(g\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 7560 m
+gs 1 -1 sc (2\(h\)) col0 sh gr
+%  a 
+/Times-Roman ff 349.25 scf sf
+2070 8010 m
+gs 1 -1 sc (3\(a\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 9810 m
+gs 1 -1 sc (3\(e\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 9360 m
+gs 1 -1 sc (3\(d\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 8910 m
+gs 1 -1 sc (3\(c\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 8460 m
+gs 1 -1 sc (3\(b\)) col0 sh gr
+%  a 
+/Times-Roman ff 349.25 scf sf
+2070 10260 m
+gs 1 -1 sc (4\(a\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 10710 m
+gs 1 -1 sc (4\(b\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 11160 m
+gs 1 -1 sc (4\(c\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 11610 m
+gs 1 -1 sc (4\(d\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 12060 m
+gs 1 -1 sc (4\(e\)) col0 sh gr
+/Times-Roman ff 349.25 scf sf
+2070 12510 m
+gs 1 -1 sc (4\(f\)) col0 sh gr
+/Times-Bold ff 349.25 scf sf
+8550 450 m
+gs 1 -1 sc (2nd) col0 sh gr
 % here ends figure;
 pagefooter
 showpage

@@ -11,46 +11,67 @@ In Section~\ref{motivation} is stated that the goal of this PhD Thesis is twofol
 \subsection{Specific Objectives}
 Ranging from research challenges to debugging, the following subsection details what are believed to be the required steps to accomplish this research's general objective. Each specific objective is composed of \emph{phases} that dictate the activities required to fulfill it.
 \begin{enumerate}
-	\item Compare CSMA/CA performance with CSMA/ECA by means of simulation.\\
+
+	\item Design mechanisms for CSMA/ECA to work with upcoming traffic and Quality of Service (QoS) requirements in WLANs and evaluate its performance.\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
-		\item Replicate CSMA/CA's behavior in a discrete event-based simulator.\label{buildSimulator}
-		\item Progressively incorporate CSMA/ECA features.\label{incorporateECA}
-		\item Identify the performance metrics that will allow an unbiased comparison between the two protocols.\label{metrics}
-		\item Perform simulation tests for metrics gathering under saturated and unsaturated scenarios\label{scenarios}.
-		\item Construct a mixed scenario, where some nodes run CSMA/CA while of others use CSMA/ECA. Repeat the simulations as in Phase~\ref{scenarios}.
+		\item Investigate and develop mechanisms that would allow CSMA/ECA to accommodate many contenders in a collision-free fashion.\label{ECAHysteresis}
+		\item Design mechanisms for CSMA/ECA so it can be ruled by the Enhanced Distribution Channel Access (EDCA) function.
+		\item Develop CSMA/ECA in a discrete event-based simulator.\label{incorporateECA}
+		\item Identify the performance metrics that will allow an unbiased comparison with CSMA/CA.\label{metrics}
+		\item Design simulation tests for metrics gathering under different traffic patterns, QoS settings and considering mixed scenarios (shared network with some nodes running CSMA/CA and others CSMA/ECA).\label{scenarios}
+		\item Perform the simulation tests designed in the previous phase.
 		\item Document the results for future comparison with the hardware implementation.\label{simulationResults}\\
 	\end{enumerate}
+
+
+% 	\item Compare CSMA/CA performance with CSMA/ECA by means of simulation.\\
+% 	
+% 	{\bfseries Phases:}
+% 	\begin{enumerate}
+% 		\item Replicate CSMA/CA's behavior in a discrete event-based simulator.\label{buildSimulator}
+% 		\item Progressively incorporate CSMA/ECA features.\label{incorporateECA}
+% 		\item Identify the performance metrics that will allow an unbiased comparison between the two protocols.\label{metrics}
+% 		\item Perform simulation tests for metrics gathering under saturated and unsaturated scenarios\label{scenarios}.
+% 		\item Construct a mixed scenario, where some nodes run CSMA/CA while of others use CSMA/ECA. Repeat the simulations as in Phase~\ref{scenarios}.
+% 		\item Document the results for future comparison with the hardware implementation.\label{simulationResults}\\
+% 	\end{enumerate}
 	
-	\item Flash WNICs with the default WMP-CSMA/CA protocol to gather data that will work as a control in future testbeds.\label{learningWMP}\\
+	\item Design methods to develop and test CSMA/CA into the WMP platform.\label{learningWMP}\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
-		\item Install the WMP-Editor on a host PC to study its components and configuration.
-		\item Identify the required modifications (if any) to replicate CSMA/CA as a WMP.
-		\item Develop automated metric gatherings scripts on the client PCs based on those identified in Phase~\ref{metrics}.
-		\item Flash the necessary WNICs to replicate ad-hoc and Basic Service Set (BSS) WLANs running WMP-CSMA/CA.
-		\item Run experiments with the same parameters used in Phase~\ref{scenarios} and compare the performance evaluation with those obtained in Phase~\ref{simulationResults}.\label{WMPExperiment}\\
+		\item Install the WMP-Editor on a host PC to study its components and configuration.\label{installWMP}
+		\item Identify the software and hardware requirements needed to replicate CSMA/CA as a WMP.\label{WMPRequirements}
+		\item Design methods to develop CSMA/CA as a WMP.\label{WMPCSMA-CA}
+		\item Develop a WMP containing the CSMA/CA functionality (WMP-CSMA/CA), ready to be uploaded to the appropriate WNICs.
+		\item Design evaluation methods for the WMP-CSMA/CA so its performance can be compared with analytical models.\label{evaluatingWMP}
+		\item Develop automated metric gathering scripts on the client PCs in order to achieve the goals set at Phase~\ref{evaluatingWMP}.
+		\item Upload the WMP-CSMA/CA into the necessary WNICs.
+		\item Perform the evaluations designed in Phase~\ref{evaluatingWMP} and analyze the results.\label{WMPExperiment}\\
 	\end{enumerate}
 
-	\item Progressively modify CSMA/CA into CSMA/ECA using WMP and necessary assembly code.\label{ECAinWMP}\\
+	\item Progressively modify WMP-CSMA/CA into WMP-CSMA/ECA.\label{ECAinWMP}\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
-		\item Draw an example of CSMA/ECA using WMP-Editor in order to identify the required modifications.\label{WMPModifications}
-		\item Access the underlying ByteCode and identify the segments that correspond with Phase~\ref{WMPModifications}\label{accessByteCode}.
-		\item Design or modify the necessary XFSM that would allow the translation of CSMA/ECA into a WMP.
-		\item Flash WNICs with the CSMA/ECA protocol and repeat the experiments as performed in Phase~\ref{WMPExperiment}.\\
+		\item Identify the required modifications in WMP-CSMA/CA needed for it to become WMP-CSMA/ECA.\label{WMPModifications}
+		\item Design methods for translating the missing characteristics into functioning XFSM.\label{accessByteCode}
+		\item Develop CSMA/ECA into a WMP.
+		\item Design evaluation methods for WMP-CSMA/ECA so its performance can be compared against the results obtained in Phase~\ref{simulationResults}.
+		\item Perform the evaluations designed in the previous phase.\\
 	\end{enumerate}
 
-	\item Extend the functionality of CSMA/ECA to RFID in the attempt of reducing the convergence and tag-reading time.\label{ECAinRFID}\\
+	\item Extend the functionality of CSMA/ECA to RFID in the attempt to reduce convergence and tag-reading time.\label{ECAinRFID}\\
 	
 	{\bfseries Phases:}
 	\begin{enumerate}
 		\item Gather metrics about the current performance of the system.
-		\item Adapt CSMA/ECA to replace current MAC protocol.
-		\item Design a simulation environment where metrics can be gathered so a performance evaluation can be made. 
+		\item Identify the required modifications to CSMA/ECA so it can work in a RFID environment.
+		\item Design methods for introducing the required modifications to CSMA/ECA.
+		\item Design simulation scenarios so the modified CSMA/ECA's performance can be analyzed.
+		\item Perform the simulations designed in the previous phase.
 		\item Document the results and compare them with the performance of the network before incorporating CSMA/ECA.\\
 	\end{enumerate}
 
